@@ -1,3 +1,5 @@
+Forked from https://github.com/pbertera/dockerfiles/tree/master/syslogserver available on dockerhub at https://hub.docker.com/r/pbertera/syslogserver
+
 ## Rsyslogd + PimpMyLogs
 
 This container creates a Syslog server with Rsyslogd, logs are accessible via PimpMyLogs interface (http://pimpmylog.com).
@@ -8,4 +10,4 @@ PympMylogs credentials are created using the script create-user.php:
 
 You can run the container with:
 
-    docker run -it -e SYSLOG_USERNAME=admin -e SYSLOG_PASSWORD=1234 -p 8080:80 -p 514:514/udp pbertera/syslogserver
+    docker run -it -e SYSLOG_USERNAME=admin -e SYSLOG_PASSWORD=1234 -p 8080:80 -p 514:514/udp gdr1/syslogserver
