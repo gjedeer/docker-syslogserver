@@ -1,4 +1,4 @@
-FROM 32bit/ubuntu:14.04
+FROM ubuntu:14.04
 
 RUN apt-get update \
     && apt-get install -y git net-tools vim nginx rsyslog supervisor php5-fpm php5-cli apache2-utils\
