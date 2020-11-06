@@ -10,7 +10,7 @@ fi
 htpasswd -c -b /etc/nginx/.htpasswd $SYSLOG_USERNAME $SYSLOG_PASSWORD
 
 cd /var/www
-php5 -f create-user.php
+php -f create-user.php
 chown www-data:www-data config.auth.user.php
 rm -f create-user.php
 cd
