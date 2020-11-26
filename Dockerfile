@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
     && apt -y --force-yes dist-upgrade\
-    && apt-get install -y git net-tools vim nginx rsyslog supervisor php7.4-fpm php7.4-cli apache2-utils\
+    && apt-get install -y git net-tools vim nginx rsyslog supervisor php7.4-fpm php7.4-cli apache2-utils tini\
     && rm -rf /var/lib/apt/lists/*
 
 RUN sed -i -e 's/listen\ =\ 127.0.0.1:9000/listen\ =\ \/var\/run\/php7.4-fpm.sock/' /etc/php/7.4/fpm/pool.d/www.conf
@@ -33,4 +33,5 @@ COPY run.sh /
 
 EXPOSE 80 514/udp
 
+ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["/run.sh"]
