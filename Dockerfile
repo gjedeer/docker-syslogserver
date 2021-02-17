@@ -33,5 +33,5 @@ COPY run.sh /
 
 EXPOSE 80 514/udp
 
-ENTRYPOINT ["/sbin/tini", "--"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["/run.sh"]
